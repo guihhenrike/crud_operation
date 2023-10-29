@@ -11,33 +11,45 @@
     }
     ?>
 
-    <div class="container border border-double d-flex justify-content-center w-25 mt-5">
-        <h1 class="text-white">Register</h1>
+    <div class="container border border-primary d-flex justify-content-center w-25 mt-5 bg-black rounded">
+        <h1 class="text-black">Register</h1>
     </div>
 
-    <div class="container border border-solid d-flex justify-content-center w-50  mt-5 p-5  ">
+    <div class="  mt-5 ">
 
-        <form method="POST" action="process.php">
-            <div class="form-group mt-2">
-                <label>UserName</label>
-                <input type="text" class="form-control" name="username" placeholder="Enter your username"
+        <form method="POST" action="process.php" class="container w-50 form-control p-5 bg-danger border border-primary">
+            
+            <div class="input-group mt-4 w-50 container">
+                
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                
+                    <input type="text" class="form-control rounded border border-none w-25 " name="username" placeholder="Enter your username"
                     autocomplete="off" required>
             </div>
 
-            <div class="form-group mt-2">
-                <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off"
+            <div class="input-group mt-4 w-50 container">
+
+                <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off" 
                     required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">@gmail.com</span>
+                    </div>
             </div>
 
-            <div class="form-group mt-2">
-                <label>Mobile</label>
+            <div class="input-group mt-4 w-50 container">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">+55</span>
+                </div>
                 <input type="text" class="form-control " name="mobile" placeholder="your mobile number"
                     autocomplete="off" maxlength="11" required>
             </div>
 
-            <button type="submit" name="submit"
-                class="btn btn-primary form-control d-flex justify-content-center mt-5">Submit</button>
+            <div class="input-group mt-4 w-50 container">
+                <button type="submit" name="submit"
+                    class="btn btn-primary form-control mt-5">Submit</button>
+            </div>
         </form>
 
     </div>

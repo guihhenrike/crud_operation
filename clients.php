@@ -4,9 +4,9 @@
 
 ?>
 
-    <div class="container mt-5 p-5">
-        <table class="table table-dark table-hover table-striped">
-            <thead class="border-solid border-4 rounded-pill border-light">
+    <div class="container table-responsive mt-5 p-5">
+        <table class="table table-dark table-hover table-striped table-borderless">
+            <thead class="border border-dract">
                 <tr class="text-center">
                     <th scope="col">#</th>
                     <th scope="col">Username</th>
