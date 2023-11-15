@@ -60,6 +60,16 @@ class Database
         
     }
 
+    public function selectById($id) {
+        $selectSql = $this->pdo->prepare("SELECT * FROM clients WHERE id = :id");
+        $selectSql->bindValue(':id', $id);
+        $selectSql->execute();
+
+        $result = $selectSql->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     public function delete($id) {
         $deleteSql = "DELETE FROM clients WHERE id = :id";
         $deleteStmt = $this->pdo->prepare($deleteSql);

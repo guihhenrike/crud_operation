@@ -20,11 +20,7 @@
         <form method="POST" action="process.php" class="container w-50 form-control p-5 bg-danger border border-primary">
             
             <div class="input-group mt-4 w-50 container">
-                
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">@</span>
-                    </div>
-                
+
                     <input type="text" class="form-control rounded border border-none w-25 " name="username" placeholder="Enter your username"
                     autocomplete="off" required>
             </div>
@@ -33,15 +29,11 @@
 
                 <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off" 
                     required>
-                    <div class="input-group-append">
-                        <span class="input-group-text">@gmail.com</span>
-                    </div>
+
             </div>
 
             <div class="input-group mt-4 w-50 container">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">+55</span>
-                </div>
+
                 <input type="text" class="form-control " name="mobile" placeholder="your mobile number"
                     autocomplete="off" maxlength="11" required>
             </div>
