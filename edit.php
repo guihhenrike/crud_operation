@@ -47,9 +47,8 @@
                             <input type="hidden" name="id" value="">
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
                             <a href="clients.php" class="btn btn-success">Back</a>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
 

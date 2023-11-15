@@ -11,30 +11,30 @@
     }
     ?>
 
-    <div class="container border border-primary d-flex justify-content-center w-25 mt-5 bg-black rounded">
-        <h1 class="text-black">Register</h1>
+    <div class="d-flex justify-content-center mt-5">
+    <i class="fa-solid  fa-2xl" style="color: #005eff; font-family: 'Roboto', sans-serif;"><img src="./img/img-register.svg" alt="">Register</i>
     </div>
 
-    <div class="  mt-5 ">
+    <div class="mt-2">
 
-        <form method="POST" action="process.php" class="container w-50 form-control p-5 bg-danger border border-primary">
+        <form method="POST" action="process.php" class="container w-50 p-5 ">
             
-            <div class="input-group mt-4 w-50 container">
+            <div class="input-group mt-2 w-50 container">
 
-                    <input type="text" class="form-control rounded border border-none w-25 " name="username" placeholder="Enter your username"
+                    <input type="text" class="form-control rounded border border-primary w-25" name="username" placeholder="Enter your username"
                     autocomplete="off" required>
             </div>
 
             <div class="input-group mt-4 w-50 container">
 
-                <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off" 
+                <input type="email" class="form-control rounded border border-primary w-25" name="email" placeholder="Enter your email" autocomplete="off" 
                     required>
 
             </div>
 
             <div class="input-group mt-4 w-50 container">
 
-                <input type="text" class="form-control " name="mobile" placeholder="your mobile number"
+                <input type="text" class="form-control rounded border border-primary w-25" name="mobile" placeholder="your mobile number"
                     autocomplete="off" maxlength="11" required>
             </div>
 

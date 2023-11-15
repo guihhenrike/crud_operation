@@ -27,24 +27,19 @@ class Database
 
     public function insert()
     {
-        // Check if the client already exists
         $selectSql = "SELECT id FROM clients WHERE username = :username";
         $selectStmt = $this->pdo->prepare($selectSql);
         $selectStmt->bindValue(':username', $_POST['username']);
         $selectStmt->execute();
 
-        // If the client doesn't exist, insert it
         if ($selectStmt->rowCount() == 0) {
-            // Prepare the SQL statement
             $insertSql = "INSERT INTO clients(username, email, mobile) VALUES(:username, :email, :mobile)";
             $insertStmt = $this->pdo->prepare($insertSql);
 
-            // Bind the values to the parameters
             $insertStmt->bindValue(':username', $_POST['username']);
             $insertStmt->bindValue(':email', $_POST['email']);
             $insertStmt->bindValue(':mobile', $_POST['mobile']);
 
-            // Execute the statement
             $insertStmt->execute();
         } else {
             header('Location: index.php?error=client_already_exists');
