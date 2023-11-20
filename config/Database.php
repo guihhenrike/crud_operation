@@ -23,8 +23,6 @@ class Database
         }
     
     }
-
-
     public function insert()
     {
         $selectSql = "SELECT id FROM clients WHERE username = :username";
@@ -46,10 +44,10 @@ class Database
             exit;
         }
     }
-
     public function select() {
         $selectSql = "SELECT * FROM clients";
         $selectStmt = $this->pdo->prepare($selectSql);
+
         $selectStmt->execute();
         return $selectStmt;
         
@@ -65,6 +63,30 @@ class Database
         return $result;
     }
 
+    public function update($id) {
+        // Verificar se os campos necessários estão presentes e não estão vazios
+        if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['mobile'])) {
+            // Continuar com a atualização
+            $updateSql = "UPDATE clients SET username = :username, email = :email, mobile = :mobile WHERE id = :id";
+            $updateStmt = $this->pdo->prepare($updateSql);
+            $updateStmt->bindValue(':username', $_POST['username']);
+            $updateStmt->bindValue(':email', $_POST['email']);
+            $updateStmt->bindValue(':mobile', $_POST['mobile']);
+            $updateStmt->bindValue(':id', $id);
+            $updateStmt->execute();
+            return $updateStmt;
+        } else {
+            // Lidar com campos vazios (por exemplo, exibir uma mensagem de erro)
+            echo "Campos não podem estar vazios.";
+            // ou redirecionar de volta à página de edição
+            header("Location: edit.php?id=$id");
+            exit;
+        }
+    }
+    
+    
+
+
     public function delete($id) {
         $deleteSql = "DELETE FROM clients WHERE id = :id";
         $deleteStmt = $this->pdo->prepare($deleteSql);
@@ -74,8 +96,4 @@ class Database
     }
 
 }
-
-
-
-
 ?>
