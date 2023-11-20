@@ -27,27 +27,27 @@ if (isset($_GET['id'])) {
             <h1 class="text-center mt-5">Clients</h1>
             <div class="card mt-5">
                 <div class="card-body">
-                <form action="update.php?id=<?= $id ?>" method="POST">
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" name="name" class="form-control" value="<?= $username; ?>">
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control" value="<?= $email; ?>">
-    </div>
-    <div class="form-group">
-        <label for="mobile">Mobile</label>
-        <input type="text" name="mobile" class="form-control" value="<?= $mobile; ?>">
-    </div>
-    <!-- Apenas um campo oculto para o ID -->
-    <input type="hidden" name="id" value="<?= $id ?>">
-    
-    <div class="mt-4">
-        <a href="clients.php" class="btn btn-success">Back</a>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+                    <form action="update.php?id=<?= $id ?>" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" value="<?= $username; ?>" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" value="<?= $email; ?>" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" name="mobile" class="form-control" value="<?= $mobile; ?>" autocomplete="off" required>
+                        </div>
+                        <!-- Apenas um campo oculto para o ID -->
+                        <input type="hidden" name="id" value="<?= $id ?>">
+
+                        <div class="mt-4">
+                            <a href="clients.php" class="btn btn-success">Back</a>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
 
 
                 </div>

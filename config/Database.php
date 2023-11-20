@@ -63,7 +63,7 @@ class Database
         return $result;
     }
 
-    public function update($id) {
+    public function update($id, $username, $email, $mobile) {
         // Verificar se os campos necessários estão presentes e não estão vazios
         if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['mobile'])) {
             // Continuar com a atualização
