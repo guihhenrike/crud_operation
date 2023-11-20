@@ -40,9 +40,7 @@ if (isset($_GET['id'])) {
                             <label for="mobile">Mobile</label>
                             <input type="text" name="mobile" class="form-control" value="<?= $mobile; ?>" autocomplete="off" required>
                         </div>
-                        <!-- Apenas um campo oculto para o ID -->
                         <input type="hidden" name="id" value="<?= $id ?>">
-
                         <div class="mt-4">
                             <a href="clients.php" class="btn btn-success">Back</a>
                             <button type="submit" class="btn btn-primary">Submit</button>

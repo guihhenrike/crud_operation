@@ -3,24 +3,19 @@ include 'config/Database.php';
 
 $db = new Database();
 
-// Verificar se o parâmetro 'id' está presente na URL
 if (isset($_GET['id'])) {
-    $cliente_id = $_GET['id']; // Usar $_GET para obter o ID da URL
+    $client_id = $_GET['id'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
 
-    // Verificar se os campos necessários estão presentes e não estão vazios
     if (!empty($username) && !empty($email) && !empty($mobile)) {
-        $resultado = $db->update($cliente_id, $username, $email, $mobile);
+        $result = $db->update($client_id, $username, $email, $mobile);
 
-        if ($resultado) {
-            // Atualização bem-sucedida
-            echo "Cliente atualizado com sucesso.";
+        if ($result) {
             header('Location: clients.php');
             exit;
         } else {
-            // Falha na atualização
             echo "Erro ao atualizar o cliente.";
         }
     } else {
@@ -31,12 +26,9 @@ if (isset($_GET['id'])) {
         exit;
     }
 } else {
-    // ID não presente na URL, lidar com isso de acordo com seus requisitos
+    // Lidar com o ID do cliente vazio
     echo "ID do cliente não especificado.";
     header('Location: clients.php');
     exit;
-    // ou redirecionar de volta à página clients.php
-    // header('Location: clients.php');
-    // exit;
 }
 ?>

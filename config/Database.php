@@ -64,9 +64,9 @@ class Database
     }
 
     public function update($id, $username, $email, $mobile) {
-        // Verificar se os campos necessários estão presentes e não estão vazios
+
         if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['mobile'])) {
-            // Continuar com a atualização
+
             $updateSql = "UPDATE clients SET username = :username, email = :email, mobile = :mobile WHERE id = :id";
             $updateStmt = $this->pdo->prepare($updateSql);
             $updateStmt->bindValue(':username', $_POST['username']);
@@ -76,9 +76,7 @@ class Database
             $updateStmt->execute();
             return $updateStmt;
         } else {
-            // Lidar com campos vazios (por exemplo, exibir uma mensagem de erro)
             echo "Campos não podem estar vazios.";
-            // ou redirecionar de volta à página de edição
             header("Location: edit.php?id=$id");
             exit;
         }
